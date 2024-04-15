@@ -6,21 +6,20 @@ const argv = require('yargs')
     type: 'number',
     demandOption: true,
     describe: 'Base to the multiplication'
-  },
-    'l', {
+  })
+  .options('l', {
     alias: 'listar',
     type: 'boolean',
     demandOption: false,
     default: false,
     describe: 'List the multiplication table'
-  },
-    'h', {
+  })
+  .options('h', {
     alias: 'hasta',
     type: 'number',
     default: 10,
     describe: 'Base to the multiplication'
-  },
-  )
+  })
   .check((argv, options) => {
     if (isNaN(argv.b)) {
       throw new Error('La base tiene que ser un número');
